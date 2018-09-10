@@ -11,7 +11,7 @@ import UIKit
 class FeedViewController: ViewController<FeedView> {
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		customView.backgroundColor = .white
+		customView.delegate = self
 		let menuIcon = UIImage(named: "menu_icon")?.withRenderingMode(.alwaysOriginal)
 		self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: menuIcon, style: .plain, target: self, action: #selector(self.presentLeftMenuViewController(_:)))
 		self.navigationItem.title = "Feed"
@@ -23,5 +23,12 @@ class FeedViewController: ViewController<FeedView> {
 	}
 }
 
-extension FeedViewController {
+extension FeedViewController: FeedViewDelegate {
+	func feedCell(_ cell: FeedCell, didTapButton button: UIButton) {
+		if button == cell.commentButton {
+			let commentVC = CommentViewController()
+			navigationController?.pushViewController(commentVC, animated: true)
+		}
+	}
+	
 }

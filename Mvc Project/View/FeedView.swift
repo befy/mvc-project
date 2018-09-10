@@ -8,8 +8,19 @@
 
 import UIKit
 
+protocol FeedViewDelegate: class {
+	func feedView(_ view: FeedView, didTapButton button: UIButton)
+	func feedCell(_ cell: FeedCell, didTapButton button: UIButton)
+}
+extension FeedViewDelegate {
+	func feedView(_ view: FeedView, didTapButton button: UIButton) {
+		
+	}
+}
+
 class FeedView: View {
 	
+	weak var delegate: FeedViewDelegate?
 	var feedItems: [Feed] = []
 	
 	lazy var tableView: UITableView = {
@@ -22,6 +33,7 @@ class FeedView: View {
 		return tableView
 	}()
 	override func setViews() {
+		backgroundColor = .white
 		add(tableView)
 	}
 	override func layoutViews() {
@@ -36,6 +48,8 @@ extension FeedView: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! FeedCell
 		cell.item = feedItems[indexPath.row]
+		cell.selectionStyle = .none
+		cell.delegate = self
 		return cell
 	}
 	func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -43,5 +57,17 @@ extension FeedView: UITableViewDelegate, UITableViewDataSource {
 	}
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 164
+	}
+}
+
+extension FeedView: FeedCellDelegate {
+	func feedCell(_ cell: FeedCell, didTapButton button: UIButton) {
+		if button == cell.likeButton {
+			print("liked")
+			
+		}else if button == cell.commentButton {
+			print("commented")
+		}
+		delegate?.feedCell(cell, didTapButton: button)
 	}
 }

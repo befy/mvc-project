@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol FeedCellDelegate: class {
+	
+	func feedCell(_ cell: FeedCell, didTapButton button: UIButton)
+}
+
 class FeedCell: BaseCell<Feed> {
+	
+	weak var delegate: FeedCellDelegate?
 	
 	override var item: Feed! {
 		didSet {
@@ -72,6 +79,7 @@ class FeedCell: BaseCell<Feed> {
 	var commentButton: UIButton = {
 		let button = UIButton(type: .system)
 		button.setImage(UIImage(named: "bubble-chat")?.withRenderingMode(.alwaysOriginal), for: .normal)
+		
 		return button
 	}()
 	
@@ -103,7 +111,7 @@ class FeedCell: BaseCell<Feed> {
 	lazy var feedCounterStackView: UIStackView = {
 		let stackView = UIStackView()
 		stackView.axis = .horizontal
-		stackView.spacing = 5
+		stackView.spacing = 20
 		stackView.distribution = .equalSpacing
 		stackView.addArrangedSubview(likeStackView)
 		stackView.addArrangedSubview(commentStackView)
@@ -112,6 +120,8 @@ class FeedCell: BaseCell<Feed> {
 	
 	override func setViews() {
 		add(profileImageView, fullNameLabel, timeAgoLabel, contentText, contentSeparator, feedCounterStackView)
+		likeButton.addTarget(self, action: #selector(handleAction(_:)), for: .touchUpInside)
+		commentButton.addTarget(self, action: #selector(handleAction(_:)), for: .touchUpInside)
 	}
 	override func layoutViews() {
 		profileImageView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: nil,padding: .init(top: 4, left: 24, bottom: 0, right: 0), size: .init(width: 42, height: 42))
@@ -124,9 +134,14 @@ class FeedCell: BaseCell<Feed> {
 		
 		contentSeparator.anchor(top: contentText.bottomAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 0, height: 1))
 		
-		feedCounterStackView.anchor(top: contentSeparator.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: nil, padding: .init(top: 0, left: 24, bottom: 0, right: 0), size: .init(width: 120, height: 0))
+		feedCounterStackView.anchor(top: contentSeparator.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: nil, padding: .init(top: 0, left: 24, bottom: 0, right: 0), size: .init(width: 160, height: 0))
+	}
+	
+	@objc func handleAction(_ button: UIButton) {
+		delegate?.feedCell(self, didTapButton: button)
 	}
 }
+
 
 
 

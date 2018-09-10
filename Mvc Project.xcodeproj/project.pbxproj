@@ -22,6 +22,8 @@
 		21602F94213AE6E800DE4053 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21602F93213AE6E800DE4053 /* FeedCell.swift */; };
 		21602F96213AE83500DE4053 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21602F95213AE83500DE4053 /* Feed.swift */; };
 		21602F98213AEADF00DE4053 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21602F97213AEADF00DE4053 /* Constants.swift */; };
+		218C3C58213BFA620001722E /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C3C57213BFA620001722E /* CommentViewController.swift */; };
+		218C3C5A213BFA750001722E /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218C3C59213BFA750001722E /* CommentView.swift */; };
 		2193AE1A213AC501007A20EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2193AE19213AC501007A20EC /* AppDelegate.swift */; };
 		2193AE1C213AC501007A20EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2193AE1B213AC501007A20EC /* ViewController.swift */; };
 		2193AE21213AC502007A20EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2193AE20213AC502007A20EC /* Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		21602F93213AE6E800DE4053 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		21602F95213AE83500DE4053 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		21602F97213AEADF00DE4053 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		218C3C57213BFA620001722E /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		218C3C59213BFA750001722E /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		2193AE16213AC501007A20EC /* Mvc Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mvc Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2193AE19213AC501007A20EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2193AE1B213AC501007A20EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 				21602F78213AC63C00DE4053 /* View.swift */,
 				21602F7C213AC70900DE4053 /* FeedView.swift */,
 				21602F80213AC8B100DE4053 /* MenuView.swift */,
+				218C3C59213BFA750001722E /* CommentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 				2193AE1B213AC501007A20EC /* ViewController.swift */,
 				21602F7A213AC70300DE4053 /* FeedViewController.swift */,
 				21602F7E213AC77B00DE4053 /* MenuViewController.swift */,
+				218C3C57213BFA620001722E /* CommentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21602F81213AC8B100DE4053 /* MenuView.swift in Sources */,
+				218C3C5A213BFA750001722E /* CommentView.swift in Sources */,
 				21602F98213AEADF00DE4053 /* Constants.swift in Sources */,
 				21602F7D213AC70900DE4053 /* FeedView.swift in Sources */,
 				21602F8E213AD94900DE4053 /* MenuCell.swift in Sources */,
@@ -305,6 +312,7 @@
 				21602F92213ADDA100DE4053 /* Person.swift in Sources */,
 				21602F7F213AC77B00DE4053 /* MenuViewController.swift in Sources */,
 				2193AE1C213AC501007A20EC /* ViewController.swift in Sources */,
+				218C3C58213BFA620001722E /* CommentViewController.swift in Sources */,
 				21602F8C213AD80C00DE4053 /* BaseCell.swift in Sources */,
 				2193AE1A213AC501007A20EC /* AppDelegate.swift in Sources */,
 				21602F96213AE83500DE4053 /* Feed.swift in Sources */,

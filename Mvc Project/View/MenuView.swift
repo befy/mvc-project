@@ -77,7 +77,6 @@ class MenuView: View {
 	override func layoutViews() {
 		profileImageView.anchor(top: self.safeTopAnchor, leading: self.safeLeadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 40, left: 48, bottom: 0, right: 0), size: .init(width: 80, height: 80))
 		
-		/*nameLabel.anchor(top: profileImageView.bottomAnchor, leading: self.safeLeadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 12, left: 48, bottom: 0, right: 0))*/
 		userBioStackView.anchor(top: profileImageView.bottomAnchor, leading: self.safeLeadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 12, left: 8, bottom: 0, right: 0), size: .init(width: 160, height: 40))
 		
 		tableView.anchor(top: userBioStackView.bottomAnchor, leading: self.safeLeadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 16, left: 16, bottom: 0, right: 0), size: .init(width: 200, height: 270))
