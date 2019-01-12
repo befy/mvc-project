@@ -10,6 +10,5 @@ import UIKit
 
 class CommentViewController: ViewController<CommentView> {
 	override func viewDidLoad() {
-		print("kenevir tohumu")
 	}
 }

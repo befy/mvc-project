@@ -28,11 +28,14 @@ class MenuCell: BaseCell<MenuModel> {
 		return label
 	}()
 	override func setViews() {
+		super.setViews()
 		add(menuIcon, menuTitleLabel)
 		
 	}
 	override func layoutViews() {
+		super.layoutViews()
 		menuIcon.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: nil, padding: .init(top: 4, left: 4, bottom: 4, right: 0), size: .init(width: 16, height: 0))
+		
 		menuTitleLabel.anchor(top: topAnchor, leading: menuIcon.trailingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 4, left: 16, bottom: 4, right: 0), size: .zero)
 		
 	}

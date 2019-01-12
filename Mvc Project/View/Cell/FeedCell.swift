@@ -9,7 +9,6 @@
 import UIKit
 
 protocol FeedCellDelegate: class {
-	
 	func feedCell(_ cell: FeedCell, didTapButton button: UIButton)
 }
 

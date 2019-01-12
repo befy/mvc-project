@@ -66,7 +66,7 @@ extension FeedView: FeedCellDelegate {
 			print("liked")
 			
 		}else if button == cell.commentButton {
-			print("commented")
+			
 		}
 		delegate?.feedCell(cell, didTapButton: button)
 	}

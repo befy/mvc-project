@@ -9,9 +9,12 @@
 import UIKit
 
 class CommentView: View {
+	
+	
 	override func setViews() {
 		backgroundColor = .red
 	}
+	
 	override func layoutViews() {
 		
 	}
